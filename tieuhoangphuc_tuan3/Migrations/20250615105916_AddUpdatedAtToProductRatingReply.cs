@@ -1,0 +1,29 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace WebBanDienThoai.Migrations
+{
+    /// <inheritdoc />
+    public partial class AddUpdatedAtToProductRatingReply : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<DateTime>(
+                name: "UpdatedAt",
+                table: "ProductRatingReplies",
+                type: "datetime2",
+                nullable: true);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "UpdatedAt",
+                table: "ProductRatingReplies");
+        }
+    }
+}
